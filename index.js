@@ -41,4 +41,17 @@ app.get('/api/get-results/:sessionId', async (req, res) => {
     }
 });
 
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
+});
+
+app.use(function (req, res, next) {
+  res.status(404);
+  res.json({
+    message: `Cannot ${req.method} ${req.path}`,
+    error: 'Not Found',
+    statusCode: res.statusCode,
+  });
+});
+
 app.listen(3000, () => console.log('Backend running on port 3000'));
