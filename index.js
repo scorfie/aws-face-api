@@ -29,6 +29,8 @@ app.get('/api/get-results/:sessionId', async (req, res) => {
     try {
         const command = new GetFaceLivenessSessionResultsCommand({ SessionId: sessionId });
         const response = await rekognition.send(command);
+    
+        console.log(response);
         
         // High confidence (e.g., > 85%) usually indicates a real person
         res.json({
