@@ -1,0 +1,29 @@
+{
+  "name": "aws-face-api",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/scorfie/aws-face-api#readme",
+  "bugs": {
+    "url": "https://github.com/scorfie/aws-face-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scorfie/aws-face-api.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-rekognition": "^3.998.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
