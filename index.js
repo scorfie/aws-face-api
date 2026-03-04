@@ -1,12 +1,14 @@
 import express, { json } from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import morgan from 'morgan';
 import { RekognitionClient, CreateFaceLivenessSessionCommand, GetFaceLivenessSessionResultsCommand } from "@aws-sdk/client-rekognition";
 
 dotenv.config();
 
 const app = express();
 app.use(json());
+app.use(morgan('dev'));
 app.use(cors({
   origin: '*'
 }));
