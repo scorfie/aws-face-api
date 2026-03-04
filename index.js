@@ -1,11 +1,15 @@
 import express, { json } from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { RekognitionClient, CreateFaceLivenessSessionCommand, GetFaceLivenessSessionResultsCommand } from "@aws-sdk/client-rekognition";
 
 dotenv.config();
 
 const app = express();
 app.use(json());
+app.use(cors({
+  origin: '*'
+}));
 
 const rekognition = new RekognitionClient({ region: "us-east-1", credentials: {
     accessKeyId: process.env.ACCESS_KEY,
